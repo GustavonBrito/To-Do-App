@@ -96,3 +96,7 @@ button {
   display:none;
   color: red;
 }
+#erroLogin{
+  display:none;
+  color: red;
+}

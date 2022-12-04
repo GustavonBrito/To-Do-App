@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="styles/acesso.css">
 
   <!-- ---------------------- lógica aplicada no login ----------------------- -->
-  <script src="/scripts/utils.js"></script>
-  <script src="/scripts/index.js"></script>
+<!--   <script src="/scripts/utils.js"></script>
+  <script src="/scripts/index.js"></script> -->
 
 </head>
 
@@ -36,6 +36,7 @@
         Senha:
         <input id="inputPassword" type="password" oninput="senhaValida()">
         <p id="senhaLogin">A senha requer uma letra maiúscula, um símbolo e 8 caracteres</p>
+        <p id="erroLogin">Email e/ou Senha estão incorretos</p>
       </label>
 
       <button type="submit" id="botaoAcessar" disabled>Acessar</button>
@@ -46,6 +47,7 @@
     </div>
   </div>
   <script src="scripts/app.js"></script>
+  <script src="scripts/baseURL.js"></script>
 </body>
 
 </html>
