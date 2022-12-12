@@ -123,6 +123,8 @@ function valorCampos(JSON){
     loginValida(JSON)
 }
 
+let loading = document.querySelector(".c-loader")
+
 async function loginValida(objvalorCampos){
     let configs = {
         method: "POST",
@@ -138,7 +140,13 @@ async function loginValida(objvalorCampos){
             // botao de prevent, não envia enquanto o usuario não clicar no botão
             botao.addEventListener("click", function(e){
                 e.preventDefault()
-                loginSucesso(loginResponse)
+                botao.style.display = "none"
+                loading.style.display = "block"
+                loading.style.marginTop = "10px"
+                setTimeout(() => {    
+                    loginSucesso(loginResponse)
+                }, 4000);
+                
             })
                 
         }
@@ -158,7 +166,7 @@ async function loginValida(objvalorCampos){
 
 
 function loginSucesso(resposta) {
-    console.log(resposta.jwt);
+    
 
     //Salva o token no cliente/front end
 

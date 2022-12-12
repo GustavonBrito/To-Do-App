@@ -9,6 +9,7 @@
 
   <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
   <link rel="stylesheet" href="styles/acesso.css">
+  <link rel="stylesheet" href="styles/loading.css">
   
 </head>
 
@@ -21,6 +22,7 @@
     <form>
       <div id="form" class="form-header">
         <p>To-Do App</p>
+        <small id="cadastroRealizado">Cadastro realizado com sucesso !</small>
       </div>
 
       <label>
@@ -47,10 +49,12 @@
         Repetir senha:
         <input id="repeatPassword" type="password" oninput="validarSenhaRep()">
         <small id="inforepeatPassword" ></small>
-        <p id="preencherCampos">Preencha os campos em branco</p>
+        <small id="preencherCampos">Preencha os campos em branco</small>
+        
       </label>
 
       <button id="salvar" type="submit">Criar conta</button>
+      <div class="c-loader"></div>
 
     </form>
     <div class="ingressar">

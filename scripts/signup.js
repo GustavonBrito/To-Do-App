@@ -251,12 +251,12 @@ inputPasswordRep.addEventListener("keyup", function(){
 
 function validarCampos(){
     if (inputName.value.length < 4 || inputSobreNome.value.length < 4){
-        botao.setAttribute("disabled", "")
+        
         preencherCampos.style.display = "block"
         botao.style.backgroundColor = "grey"
     }
     else{
-        botao.setAttribute("enabled",true)
+        
         preencherCampos.style.display = "none"
         
     }
@@ -265,13 +265,13 @@ function validarCampos(){
 function validarEmail(){
     if(validacaoEmail.test(inputEmail.value))
     {
-        botao.setAttribute("enabled",true)
+        
         preencherCampos.style.display = "none"
         
     }
     else
     {
-        botao.setAttribute("disabled", "")
+        
         preencherCampos.style.display = "block"
         botao.style.backgroundColor = "grey"
     }
@@ -280,39 +280,56 @@ function validarEmail(){
 function validarSenha(){
     if(validacaoSenha.test(inputPassword.value) || validacaoSenhaRep.test(inputPasswordRep.value))
     {
-        botao.setAttribute("enabled",true)
+        
         preencherCampos.style.display = "none"
         
     }
     else
     {
-        botao.setAttribute("disabled", "")
+        
         preencherCampos.style.display = "block"
         botao.style.backgroundColor = "grey"
     }
 
 }
 function validarSenhaRep(){
-    if(validacaoSenhaRep.test(inputPasswordRep.value) && validarEmail())
+    if(validacaoSenhaRep.test(inputPasswordRep.value) && validacaoEmail.test(inputEmail.value) && validacaoSenhaRep.test(inputPasswordRep.value))
     {
-        botao.setAttribute("enabled",true)
+        
         preencherCampos.style.display = "none"
         botao.style.backgroundColor = "blue"
     }
     else
     {
-        botao.setAttribute("disabled", "")
+        
         preencherCampos.style.display = "block"
         botao.style.backgroundColor = "grey"
     }
 
 }
 
+let cadastro = document.querySelector("#cadastroRealizado")
+
+let loading = document.querySelector(".c-loader")
+
 botao.addEventListener("click", function(e){
     e.preventDefault()
     validarCampos()
     validarEmail()
     validarSenha()
+    if(validacaoSenhaRep.test(inputPasswordRep.value) && validacaoEmail.test(inputEmail.value) && validacaoSenhaRep.test(inputPasswordRep.value)){
+        cadastro.style.display = "block"
+        botao.style.display = "none"
+        loading.style.display = "block"
+        loading.style.marginTop = "10px"
+        setTimeout(() => {    
+            alert("Redirecionaremos voce para a pagina de Login")
+            
+            location.href = "index.html"
+        }, 2000);
+        
+           
+    }    
 })
 
 /* let input = document.querySelector("input")
