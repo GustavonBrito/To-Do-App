@@ -9,6 +9,11 @@
 
   <!-- ---------------- estilos compartilhados entre login e signup ---------------- -->
   <link rel="stylesheet" href="styles/acesso.css">
+  <link rel="stylesheet" href="styles/animacoes/loading.css">
+
+  <script src="scripts/login.js" defer></script>
+  <script src="scripts/baseURL.js" defer></script>
+  <script src="scripts/tarefas.js" defer></script>
 
   <!-- ---------------------- lógica aplicada no login ----------------------- -->
 <!--   <script src="/scripts/utils.js"></script>
@@ -30,24 +35,25 @@
       <label>
         Email:
         <input id="inputEmail" type="text" oninput="emailValida()">
-        <p id="emailLogin">Email incorreto</p>
+        <small id="emailLogin">Email incorreto</small>
       </label>
       <label>
         Senha:
         <input id="inputPassword" type="password" oninput="senhaValida()">
-        <p id="senhaLogin">A senha requer uma letra maiúscula, um símbolo e 8 caracteres</p>
-        <p id="erroLogin">Email e/ou Senha estão incorretos</p>
+        <small id="senhaLogin">A senha requer uma letra maiúscula, um símbolo e 8 caracteres</small>
+        <small id="erroLogin">Email e/ou Senha estão incorretos</small>
+        <small id="preencherCampos">Preencha os campos em branco</small>
       </label>
 
-      <button type="submit" id="botaoAcessar" disabled>Acessar</button>
+      <button type="submit" id="botaoAcessar">Acessar</button>
+      <div class="c-loader"></div>
 
     </form>
     <div class="ingressar">
       <a href="signup.html">Não possui conta? Crie agora mesmo</a>
     </div>
   </div>
-  <script src="scripts/app.js"></script>
-  <script src="scripts/baseURL.js"></script>
+
 </body>
 
 </html>

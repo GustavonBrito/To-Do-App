@@ -238,6 +238,10 @@ a {
 #skeleton{
   animation: trasparencia 1s infinite;
 }
+i {
+  cursor: pointer;
+  margin-left: 10px;
+}
 @keyframes trasparencia {
   0%{ opacity: 0.5;}
   100%{ opacity: 0.8;}

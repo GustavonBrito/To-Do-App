@@ -14,6 +14,12 @@ let validacaoEmail = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
 let erroLogin = document.getElementById("erroLogin")
 
+let preencherCampos = document.getElementById("preencherCampos")
+
+onload = function (){
+    botao.style.backgroundColor = "grey"
+}
+
 function emailValida(){
 
     
@@ -91,6 +97,7 @@ function validar(){
     if(validacaoEmail.test(login.value) && validacaoSenha.test(senha.value)){
         botao.removeAttribute("disabled")
         botao.style.backgroundColor = "#7898ff"
+        preencherCampos.style.display = "none"
         let corpo = {
             email: login.value,
             password: senha.value
@@ -116,6 +123,8 @@ function valorCampos(JSON){
     loginValida(JSON)
 }
 
+let loading = document.querySelector(".c-loader")
+
 async function loginValida(objvalorCampos){
     let configs = {
         method: "POST",
@@ -131,7 +140,16 @@ async function loginValida(objvalorCampos){
             // botao de prevent, não envia enquanto o usuario não clicar no botão
             botao.addEventListener("click", function(e){
                 e.preventDefault()
-                loginSucesso(loginResponse)
+                botao.style.display = "none"
+                loading.style.display = "block"
+                loading.style.marginTop = "10px"
+                if(erroLogin.style.display = "block"){
+                    erroLogin.style.display = "none" 
+                }
+                setTimeout(() => {    
+                    loginSucesso(loginResponse)
+                }, 4000);
+                
             })
                 
         }
@@ -150,8 +168,8 @@ async function loginValida(objvalorCampos){
 }
 
 
- function loginSucesso(resposta) {
-    console.log(resposta.jwt);
+function loginSucesso(resposta) {
+    
 
     //Salva o token no cliente/front end
 
@@ -168,12 +186,16 @@ function loginErro(resposta){
     }
 }
 
-/* function loginErro(resposta) {
-    console.log(resposta);
-    if (resposta.status == 400 || resposta.status == 404) {
-        alert("E-mail e/ou senha inválidos.")
+botao.addEventListener("click", function(){
+    if(login.value == "" || senha.value == ""){
+        botao.setAttribute("disabled", true)
+        preencherCampos.style.display = "block"
+    }else{
+        console.log("validado");
     }
-} */
+})
+
+
 
 
 
