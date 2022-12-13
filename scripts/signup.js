@@ -1,3 +1,4 @@
+
 // Ainda está faltando:
 //Ambos os campos devem ser normalizados (ex: retirar espaços desnecessários);
 //Os campos “senha” e “repetir senha” devem possuir a mesma informação para serem considerados válidos;

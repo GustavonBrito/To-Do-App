@@ -143,6 +143,9 @@ async function loginValida(objvalorCampos){
                 botao.style.display = "none"
                 loading.style.display = "block"
                 loading.style.marginTop = "10px"
+                if(erroLogin.style.display = "block"){
+                    erroLogin.style.display = "none" 
+                }
                 setTimeout(() => {    
                     loginSucesso(loginResponse)
                 }, 4000);
@@ -192,12 +195,7 @@ botao.addEventListener("click", function(){
     }
 })
 
-/* function loginErro(resposta) {
-    console.log(resposta);
-    if (resposta.status == 400 || resposta.status == 404) {
-        alert("E-mail e/ou senha inválidos.")
-    }
-} */
+
 
 
 
