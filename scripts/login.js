@@ -22,8 +22,6 @@ onload = function (){
 
 function emailValida(){
 
-    
-
         if(validacaoEmail.test(login.value)){
             login.style.borderColor = "green"
             mensagemLogin.style.display = "none"
@@ -169,7 +167,6 @@ async function loginValida(objvalorCampos){
 
 
 function loginSucesso(resposta) {
-    
 
     //Salva o token no cliente/front end
 

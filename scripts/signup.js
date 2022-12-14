@@ -333,17 +333,6 @@ botao.addEventListener("click", function(e){
     }    
 })
 
-/* let input = document.querySelector("input")
-
-input.addEventListener("keydown",function(){
-    if (inputEmail.value == "" || inputName.value.length == "" || inputSobreNome.value == "" || inputPassword.value == "" || inputPasswordRep.value == ""){
-        botao.style.backgroundColor = "red"
-        }
-    else{
-            botao.style.backgroundColor = "blue"
-        }
-}) */
-
 botao.addEventListener("click",function(e){
     e.preventDefault()  
     infosUsuario()  

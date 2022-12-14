@@ -19,8 +19,8 @@ onload = function (){
         buscaDadosUsuariosApi();
         
 
-        renderizarSkeletons(3,".tarefas-pendentes")
-        renderizarSkeletons(3,".tarefas-terminadas")
+        renderizarSkeletons(1,".tarefas-pendentes")
+        renderizarSkeletons(1,".tarefas-terminadas")
 
         //Chama o método que lista todas as tarefas
         
@@ -311,6 +311,7 @@ function finalizarsessao(){
     finalizarSessao.addEventListener("click", function(){
         let teste = confirm("Tem certeza que deseja sair ?")
         if (teste === true){
+            sessionStorage.clear(tokenJwt)
             location.href = "index.html"
         }
         else{
